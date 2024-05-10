@@ -4,6 +4,9 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './user/user.module';
 import { User } from './user/entities/user.entity';
+import { TaskModule } from './task/task.module';
+import { TaskCategoriesModule } from './task_categories/task_categories.module';
+import { TaskStatusModule } from './task_status/task_status.module';
 
 @Module({
   imports: [
@@ -18,6 +21,9 @@ import { User } from './user/entities/user.entity';
       synchronize: true,
     }),
     UserModule,
+    TaskModule,
+    TaskCategoriesModule,
+    TaskStatusModule,
   ],
   controllers: [AppController],
   providers: [AppService],
